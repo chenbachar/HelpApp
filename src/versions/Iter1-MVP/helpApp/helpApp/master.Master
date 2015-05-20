@@ -8,13 +8,21 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        changes<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-    </form>
+
+
+<body style="height: 100%; width: 70%; margin-left: auto; margin-right: auto" id="body">
+        <form id="form1" runat="server" style="width: 100%; height: 100%">
+            <table id="table" style="width: 100%; height: 100%; position: absolute;">
+                <tr style="width: 100%; height: 40%; position: absolute;">
+                    <td style="background-position: center top; background-image: url('/pic/masterTop.png'); background-attachment: fixed; width: 100%; height: 100%; position: absolute; background-repeat: no-repeat;"></td>
+                </tr>
+                <tr style="width: 100%; height: 60%; position: absolute;">
+                    <td>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </form>
 </body>
 </html>
