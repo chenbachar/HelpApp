@@ -29,7 +29,7 @@
                         <br />
                     </td>
                     <td>
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/VolunteerRegisteration.aspx" Font-Names="Arial">מתנדב חדש? לחץ כאן</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/VolunteerRegistration.aspx" Font-Names="Arial">מתנדב חדש? לחץ כאן</asp:HyperLink>
                     </td>
                 </tr>
             </table>
