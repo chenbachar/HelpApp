@@ -8,3 +8,8 @@ C:\Users\מתן\Desktop\לימודים\סמסטר ו\הנדסת תוכנה\HelpA
 C:\Users\מתן\Desktop\לימודים\סמסטר ו\הנדסת תוכנה\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\obj\Debug\helpApp.csprojResolveAssemblyReference.cache
 C:\Users\מתן\Desktop\לימודים\סמסטר ו\הנדסת תוכנה\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\obj\Debug\helpApp.dll
 C:\Users\מתן\Desktop\לימודים\סמסטר ו\הנדסת תוכנה\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\obj\Debug\helpApp.pdb
+D:\לימודים\תוכנה - שנה ג\שנה ג - סמסטר ב\הנדסת תוכנה\HelpApp\Resp\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\bin\helpApp.dll
+D:\לימודים\תוכנה - שנה ג\שנה ג - סמסטר ב\הנדסת תוכנה\HelpApp\Resp\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\bin\helpApp.pdb
+D:\לימודים\תוכנה - שנה ג\שנה ג - סמסטר ב\הנדסת תוכנה\HelpApp\Resp\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\obj\Debug\helpApp.csprojResolveAssemblyReference.cache
+D:\לימודים\תוכנה - שנה ג\שנה ג - סמסטר ב\הנדסת תוכנה\HelpApp\Resp\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\obj\Debug\helpApp.dll
+D:\לימודים\תוכנה - שנה ג\שנה ג - סמסטר ב\הנדסת תוכנה\HelpApp\Resp\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\obj\Debug\helpApp.pdb

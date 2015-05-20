@@ -5,24 +5,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style>
+        #header {
+            background-color: #ff6a00;
+            height: 15%;
+            width: 100%;
+        }
+
+        .stretch {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 
 
-<body style="height: 100%; width: 70%; margin-left: auto; margin-right: auto" id="body">
-        <form id="form1" runat="server" style="width: 100%; height: 100%">
-            <table id="table" style="width: 100%; height: 100%; position: absolute;">
-                <tr style="width: 100%; height: 40%; position: absolute;">
-                    <td style="background-position: center top; background-image: url('/pic/masterTop.png'); background-attachment: fixed; width: 100%; height: 100%; position: absolute; background-repeat: no-repeat;"></td>
-                </tr>
-                <tr style="width: 100%; height: 60%; position: absolute;">
-                    <td>
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </td>
-                </tr>
-            </table>
-        </form>
+<body>
+    <form id="form1" runat="server" style="width: 99%; height: 99%; position: absolute">
+        <div id="wrapper" style="margin-left: auto; margin-right: auto; width: 60%; height: 100%; background-color: #00FFFF">
+            <div id="header">
+                <div id="bg">
+                     <img src="/pic/masterTop.png" class="stretch" alt="" />
+                </div>
+            </div>
+            <div id="main" style="background-color: #4cff00; height: 100%; width: 100%">
+                main
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
 </body>
 </html>
