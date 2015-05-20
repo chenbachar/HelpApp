@@ -10,7 +10,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-     <div id="wrapper" style="text-align:center; width: 50%; height: 300px; margin-left: auto; margin-right: auto; margin-top: 5%;   background: repeating-linear-gradient(yellow 20%, orange );">
+     <div id="wrapper" style="text-align:center; width: 50%; height: 300px; margin-left: auto; margin-right: auto; margin-top: 5%;   background: repeating-linear-gradient(blue 20%, cyan );">
             <h1>HelpAPP</h1>
             <div id="main" style="width: 60%; height: 100%; margin-left: auto; margin-right: auto; padding-top:2% ">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
