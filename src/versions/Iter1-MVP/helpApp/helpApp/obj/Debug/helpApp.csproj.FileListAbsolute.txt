@@ -1,0 +1,5 @@
+c:\users\מתן\pictures\documents\visual studio 2012\Projects\helpApp\helpApp\bin\helpApp.dll
+c:\users\מתן\pictures\documents\visual studio 2012\Projects\helpApp\helpApp\bin\helpApp.pdb
+c:\users\מתן\pictures\documents\visual studio 2012\Projects\helpApp\helpApp\obj\Debug\helpApp.csprojResolveAssemblyReference.cache
+c:\users\מתן\pictures\documents\visual studio 2012\Projects\helpApp\helpApp\obj\Debug\helpApp.dll
+c:\users\מתן\pictures\documents\visual studio 2012\Projects\helpApp\helpApp\obj\Debug\helpApp.pdb
