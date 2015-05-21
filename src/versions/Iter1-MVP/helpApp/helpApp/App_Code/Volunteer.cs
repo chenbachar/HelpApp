@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace helpApp.App_Code
+namespace helpApp
 {
     public class Volunteer
     {
@@ -58,8 +58,5 @@ namespace helpApp.App_Code
             set { this.mail = value; }
             get { return this.mail; }
         }
-            
-
-
     }
 }
