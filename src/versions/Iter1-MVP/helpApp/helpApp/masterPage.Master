@@ -15,7 +15,7 @@
 <body>
 
 
-        <form id="form1" runat="server" style="width: 99%; height: 99%; position: absolute; top: -7.6%; background-color: #00FFFF;">
+        <form id="form1" runat="server" style="width: 99%; height: 99%; position: absolute; top: -7.6%;">
         
         <table style="width: 99%; height: 99%;  position: inherit;">
             <tr style="height: 30%;" >
