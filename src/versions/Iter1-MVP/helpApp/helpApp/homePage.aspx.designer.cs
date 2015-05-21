@@ -11,7 +11,7 @@ namespace helpApp
 {
 
 
-    public partial class homePage
+    public partial class homePage1
     {
     }
 }
