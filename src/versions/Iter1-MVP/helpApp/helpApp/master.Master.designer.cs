@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace helpApp {
+namespace master {
     
     
-    public partial class helpSeeker {
+    public partial class Master {
         
         /// <summary>
         /// head control.
