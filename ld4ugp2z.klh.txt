@@ -1,0 +1,27 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# Explicit paths specified without -i or -o; assuming --only paths...
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   src/versions/Iter1-MVP/helpApp/helpApp.v11.suo
+#	deleted:    src/versions/Iter1-MVP/helpApp/helpApp/App_Code/Requests.cs
+#	modified:   src/versions/Iter1-MVP/helpApp/helpApp/bin/helpApp.dll
+#	modified:   src/versions/Iter1-MVP/helpApp/helpApp/bin/helpApp.pdb
+#	modified:   src/versions/Iter1-MVP/helpApp/helpApp/helpApp.csproj
+#	deleted:    src/versions/Iter1-MVP/helpApp/helpApp/master.Master
+#	deleted:    src/versions/Iter1-MVP/helpApp/helpApp/master.Master.cs
+#	deleted:    src/versions/Iter1-MVP/helpApp/helpApp/master.Master.designer.cs
+#	modified:   src/versions/Iter1-MVP/helpApp/helpApp/masterPage.Master
+#	modified:   src/versions/Iter1-MVP/helpApp/helpApp/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	modified:   src/versions/Iter1-MVP/helpApp/helpApp/obj/Debug/helpApp.dll
+#	modified:   src/versions/Iter1-MVP/helpApp/helpApp/obj/Debug/helpApp.pdb
+#
+# Untracked files:
+#	src/versions/Iter1-MVP/helpApp/helpApp/helpRequest.aspx
+#	src/versions/Iter1-MVP/helpApp/helpApp/helpRequest.aspx.cs
+#	src/versions/Iter1-MVP/helpApp/helpApp/helpRequest.aspx.designer.cs
+#
+

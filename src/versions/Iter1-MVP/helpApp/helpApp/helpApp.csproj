@@ -57,6 +57,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="helpRequest.aspx" />
     <Content Include="homePage.aspx" />
     <Content Include="pic\masterTop.png" />
     <Content Include="Web.config" />
@@ -67,6 +68,13 @@
     <Compile Include="App_Code\BL.cs" />
     <Compile Include="App_Code\DAL.cs" />
     <Compile Include="App_Code\httpConnection.cs" />
+    <Compile Include="helpRequest.aspx.cs">
+      <DependentUpon>helpRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="helpRequest.aspx.designer.cs">
+      <DependentUpon>helpRequest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
