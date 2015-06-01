@@ -18,6 +18,9 @@ handlers:
 - url: /index
   script: web.pages.index.app
 
+- url: /helpSeeker
+  script: web.pages.helpSeeker.app
+  
 - url: /api/(.*)
   script: api.\1.app
 
