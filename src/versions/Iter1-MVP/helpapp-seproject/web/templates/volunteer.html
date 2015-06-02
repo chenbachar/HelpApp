@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>HelpAPP</title>
+<link rel="stylesheet" type="text/css"  href="/static/css/volunteer.css" >
+<script src="/static/js/index.js"></script>
+<script src="/static/js/volunteer.js" type="text/javascript">getName();</script>
+</head>
+<body>
+	<div id="header">
+		<img id="headerPic" class="stretch" alt="header"></div>
+	</div>
+	<center>
+	<div id="title">	
+    </div>
+	 <script type="text/javascript">
+       getName();
+    </script>
+	
+	<br><br>
+	<img id="imgStatus" onclick="changeImg()" src="/static/img/OFF.jpg" width="70" height="35">
+	
+	
+	<br><br>
+	<div id="text">
+	<select id="city" onchange="selectCity(this.value);">
+		<option>ירושלים</option>
+		<option>תל-אביב</option>
+		<option>חיפה</option>
+		<option>אילת</option>
+	</select>
+	:בחר עיר שברצונך להתנדב<p></p>
+	</div>
+<br>
+</br>
+	
+<form>
+<fieldset style="width:30%">
+<legend>עדכון פרטים</legend>
+ <input id="firstName" type="text" style="width:25%"> שם
+ <input id="lastName" type="text" style="width:25%"> משפחה
+ <br></br>
+ <input id="email" type="text" style="width:30%"> טלפון
+ <input id="phone" type="text" style="width:20%"> אימייל
+ <br></br>
+<form action="">
+<fieldset style="width:20%">
+<legend>רכב</legend>
+<input type="radio" name="car" value="yes">אין
+<input type="radio" name="Car" value="no" checked>יש
+</fieldset>
+</form>
+ <form action="">
+<fieldset style="width:90%">
+<legend>שפות</legend>
+<input type="checkbox" name="Hebrew">עברית
+<input type="checkbox" name="English">English
+<input type="checkbox" name="Spanish">español
+<input type="checkbox" name="Russian">русский
+<input type="checkbox" name="French">français
+</fieldset>
+</form>
+<p>
+<input type="submit" value="עדכן"/>
+</fieldset>
+</form>
+
+	
+	</center>
+	<div id="footer">
+		<img id="footerPic" class="stretch" alt="footer">
+		<p id="text">Copyright © 2015 HelpAPP LTD. All rights reserved.</p></div>
+	</div>
+</body>
+</html>
