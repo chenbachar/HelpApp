@@ -21,6 +21,9 @@ handlers:
 - url: /helpSeeker
   script: web.pages.helpSeeker.app
   
+- url: /volunteer
+  script: web.pages.volunteer.app
+  
 - url: /api/(.*)
   script: api.\1.app
 
