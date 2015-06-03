@@ -7,16 +7,7 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div id="main" style="border-style: solid; border-width: thick; margin-left: auto; margin-right: auto; background-color: aqua; width: 60%; margin-top: 5%; direction: rtl">
-            <asp:Label ID="Label1" runat="server" Text="בקשת עזרה:" Font-Bold="True" Font-Names="Arial" Font-Size="XX-Large" Font-Underline="True"></asp:Label>
-            <table style="width: 50%;">
-                <tr>
-                    <td style="font-family: Arial, Helvetica, sans-serif; font-size: x-large; width: 30%;">תוכן הבקשה:</td>
-                    <td>
-                        <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine"></asp:TextBox>
-                    </td>
-                </tr>
+ 
                 <tr>
                     <td style="width: 30%; font-family: Arial, Helvetica, sans-serif; font-size: x-large;">שם:</td>
                     <td>
