@@ -1,7 +1,3 @@
-function getName(){
-	document.getElementById("title").innerHTML = "ברוך הבא";
-}
-
 function changeImg(){
 	var img=document.getElementById("imgStatus");
 	if(img.src.match("OFF")){

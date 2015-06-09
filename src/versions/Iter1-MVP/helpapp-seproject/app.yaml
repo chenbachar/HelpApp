@@ -1,5 +1,5 @@
 application: helpapp-seproject
-version: 1-1
+version: 1-2
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -23,6 +23,9 @@ handlers:
   
 - url: /volunteer
   script: web.pages.volunteer.app
+
+- url: /connect
+  script: web.pages.connect.app
   
 - url: /api/(.*)
   script: api.\1.app

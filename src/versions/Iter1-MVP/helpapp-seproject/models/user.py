@@ -5,7 +5,10 @@ from google.appengine.ext import ndb
 
 class User(ndb.Model):
 	email = ndb.StringProperty()
-	
+	phone = ndb.IntegerProperty()
+	name = ndb.StringProperty()
+	status = ndb.BooleanProperty()
+	hasCar = ndb.BooleanProperty()
 	
 	@staticmethod
 	def checkUser():
@@ -19,12 +22,12 @@ class User(ndb.Model):
 		
 		return False
 	
-	#generates a url at which the user can login, and then will be redirected back to his original location
+	#generates a url at which the user can login, and then will be redirected back to volunteer location
 	@staticmethod
 	def loginUrl():
-		return users.create_login_url('/connect')
+		return users.create_login_url('/volunteer')
 	
-	#generates a url at which the user can logout, and then will be redirected back to his original location
+	#generates a url at which the user can logout, and then will be redirected back to the index location
 	@staticmethod
 	def logoutUrl():
 		return users.create_logout_url('/')
@@ -34,11 +37,13 @@ class User(ndb.Model):
 		googleUser = users.get_current_user()
 		if googleUser:
 			user = User.query(User.email == googleUser.email()).get()
-			if not user:
+			if not user:	#add user to DB
 				user = User()
 				user.email = googleUser.email()
+				user.status = False
+				user.hasCar = False
 				user.put()
-			return user
+			return user 	#user exists
 
 		else:
-			return "not connected"
+			return None
