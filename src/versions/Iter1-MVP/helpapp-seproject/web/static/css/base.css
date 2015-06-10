@@ -10,7 +10,8 @@ body {
 #wrapper{
 	min-height:60%;
 	width:70%;
-	margin: auto;
+	margin-right: auto;
+	margin-left: auto;
 }
 #header{
 	height: 15%;
