@@ -6,10 +6,24 @@
 
 {% block content %}
 	<h1 id="headline">חפש עזרה</h1>
+	<div id="cityDiv">
+		<select id="city" onchange="selectCity(this.value);" dir="rtl">
+			<option>בחר עיר</option>
+			<option>ירושלים</option>
+			<option>תל-אביב</option>
+			<option>חיפה</option>
+			<option>אילת</option>
+		</select>
+			<b>:עיר</b>
+		</br>
+		<b>האם דרוש רכב:</b>
+		<input type="radio" name="car" value="yes">דרוש</input>
+		<input type="radio" name="Car" value="no" checked>לא דרוש</input>
+	</div>
 	<table style="width:100%">
 		<tr>
 			<td rowspan="3" style="text-align:right">
-				<textarea rows="10" cols="50" style="text-align:right; resize: none; font-size:20px"></textarea>
+				<textarea rows="8" cols="50" style="text-align:right; resize: none; font-size:20px"></textarea>
 			</td>
 			<td style="width: 20%;">
 				<h3 style="text-align:right; font-family:Arial">:תאור העזרה</h3>
@@ -25,17 +39,16 @@
 	<table style="width:100%">
 		<tr>
 			<td rowspan="3" style="text-align:right">
-				<input style="text-align:right; resize:none; font-size:20px" size="2" maxlength="3"></input>
-				-
-				<input style="text-align:right; resize:none; font-size:20px" size="8" maxlength="7"></input>
+				<input style="text-align:right; resize:none; font-size:20px" size="10" maxlength="10"></input>
 			</td>
 			<td style="width: 20%;">
-				<h3 style="text-align:right; font-family:Arial;">:הכנס מספר טלפון</h3>
+				<h3 style="text-align:right; font-family:Arial;">:טלפון ליצירת קשר</h3>
 			</td>		
 		</tr>
 	</table>
-	
+		
 	<div id="button" style="text-align:center;">
-	<a href="#" class="button">חפש/י עזרה</a>
+		<a href="index" class="button">חזור</a>
+		<a href="#" class="button">חפש/י עזרה</a>
 	</div>
 {%endblock%}
