@@ -40,7 +40,19 @@
 	top:1px;
 }
 
+	
+#helpSeeker{
+	height: 10%;
+	margin-top: 7%;
+	margin-bottom: 2%;
+    text-align: center;
+}
 
+#volunteer{
+	height: 10%;
+    text-align: center;
+	margin-bottom: 10%;
+}
 #freeText {
   text-align:center;
   font-family: "Arial", Georgia, Serif;
