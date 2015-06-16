@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block head %}
+	{{block.super}}
+{%endblock%}
+
+{% block content %}
+	<div id="freeText">
+		<h3 style="text-align:center; font-family:Arial;">על מנת להתחבר למערכת, אנא השתמש בחשבון הגוגל שלך</h3>
+	</div>
+	<div id="connect" style="margin-top: 10%; text-align:center;">
+		<img id="gconnect" src="/static/img/glogin.png"
+			onclick="location.href='{{loginUrl}}'" alt="Connect with Google">
+	</div>
+{%endblock%}

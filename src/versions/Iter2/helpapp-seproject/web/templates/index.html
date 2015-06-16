@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block head %}
+	{{block.super}}
+	<link rel="stylesheet" type="text/css" href="/static/css/indexStyles.css"/>
+	<script> 
+		$(document).ready(function(){
+			$("#freeText").click(function(){
+				$("#hiddenText").slideToggle("slow");
+			});
+		});
+	</script>
+{%endblock%}
+
+{% block content %}
+	<div id="freeText">אפליקציה שמחברת בין מתנדבים ואנשים שזקוקים לעזרה HelpApp<br><font style="color:blue">לפרטים נוספים לחץ כאן</font> </div>
+	<div id="hiddenText">.(יישום זה נבנה כחלק מהקורס "הנדסת תוכנה" במכללה האקדמית להנדסת ירושלים (עזריאלי
+		<br><br>
+		,בא לתקן בדיוק את זה
+		HelpApp .
+		היום,
+		יש כמה ארגוני התנדבות שפועלים בשעות וימים מסוימים
+		<br>
+		.היתרון העצום של המוצר שלנו שהוא עובד 24/7,
+		זה בחינם לשימוש וזמין לכולם
+		<br><br>
+		.היישום שלנו נוצר ללא כוונת רווח עם עדיפות ודגש על סיוע לאחרים וחיבור בין אנשים
+		<br>
+		.כל מי שרוצה להתנדב רק צריך להירשם והאפליקציה תמצא לו אדם שזקוק לעזרה בתוך דקות
+	</div>
+	<div id="helpSeeker">
+		<a href="helpSeeker" class="button" style="padding:5% 5%;">מחפש עזרה</a>
+	</div>
+	<div id="volunteer">
+		<a href="connect" class="button">מתנדב</a>
+	</div>
+{%endblock%}
