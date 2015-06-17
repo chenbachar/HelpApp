@@ -30,6 +30,15 @@ handlers:
 - url: /add_request
   script: api.add_request.app
 
+- url: /get_requests
+  script: api.get_requests.app
+  
+- url: /setStatus
+  script: api.setStatus.app
+
+- url: /get_notification
+  script: api.get_notification.app
+  
 - url: /update_user
   script: api.update_user.app
   

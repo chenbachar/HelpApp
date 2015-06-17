@@ -9,7 +9,7 @@
 	<center>
 	<p id="welcome">
 		<a href='{{logoutUrl}}'>התנתק</a>
-		{% if name == 'None'  || name == ''%}
+		{% if name == 'None' or name == '' %}
 			 {{email}} ברוך הבא
 		{% else  %}
 			 {{name}} ברוך הבא
@@ -17,12 +17,14 @@
 		{% endif %}
 		
 	</p>
+	{% if status %}
+		<img id="imgStatus" onclick="changeImg()" src="/static/img/ON.PNG">
+	{% else  %}
+		<img id="imgStatus" onclick="changeImg()" src="/static/img/OFF.PNG">
+	{% endif %}
 
-	<p id="status">הסטטוס שלך: לא פעיל</p>
-	<img id="imgStatus" onclick="changeImg()" src="/static/img/OFF.jpg" width="70" height="35">
-	
 	<br><br>
-	<div id="text">
+	<div id="textVol">
 		<select id="city" dir="rtl">
 			<option value="0">כל האזורים</option>
 			<option value="1" style="font-weight: bold; color: red">צפון</option>
@@ -96,13 +98,15 @@
 	<form>
 		<fieldset style="width:30%">
 			<legend>עדכון פרטים</legend>
-			<input id="firstName" type="text" style="width:25%">
+			{% if name == 'None' or name == '' %}
+			 <input id="firstName" type="text" style="width:25%" value="">
+			{% else  %}
+			  <input id="firstName" type="text" style="width:25%" value="{{name}}">
+			{% endif %}
+			
 			שם
 			<br><br>
 			{{email}} :אימייל
-			<br><br>
-			<input id="phone" type="text" style="width:20%">
-			טלפון
 			<br><br>
 				<b><u>:רכב</u></b>
 				<br>

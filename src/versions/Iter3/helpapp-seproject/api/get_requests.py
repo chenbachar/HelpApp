@@ -3,8 +3,8 @@ import json
 from models.user import User
 from models.request import Request
 
-class addRequestHandler(webapp2.RequestHandler):
-	def get(self):
+class getRequestHandler(webapp2.RequestHandler):
+    def get(self):
         user = None
         if self.request.cookies.get('our_token'):    #the cookie that should contain the access token!
             user = User.checkToken(self.request.cookies.get('our_token'))
@@ -18,5 +18,5 @@ class addRequestHandler(webapp2.RequestHandler):
         self.response.write(json.dumps({"status": "OK", "groups": groups}))
 
 app = webapp2.WSGIApplication([
-	('/api/add_request', addRequestHandler)
+	('/get_requests', getRequestHandler)
 ], debug=True)

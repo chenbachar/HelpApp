@@ -23,4 +23,10 @@ class Request(ndb.Model):
 		#utc = datetime.utcnow()
 		#UTC_OFFSET = 3 
 		#req.date = utc# - timedelta(hours=UTC_OFFSET) #(UTC+3 = GMT+2)
+	
+	@classmethod
+	def getMostRecent(self):
+		qry = Request.query(Request.date < datetime.utcnow())
+		return qry
+		
 		

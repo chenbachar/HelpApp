@@ -1,59 +1,49 @@
 $(function(){ //this is jQuery's short notation for "fire all this when page is ready"
   $('#updateButton').on('click', updateUser);
-  loadName();
 });
 
 function changeImg(){
-	var img=document.getElementById("imgStatus");
-	if(img.src.match("OFF")){
-		document.getElementById("status").innerHTML = "הסטטוס שלך: פעיל";
-		img.src="/static/img/OFF.jpg";
+	var img = document.getElementById("imgStatus");
+	var st = "true";
+	if(img.src.match("ON")){
+		img.src="/static/img/OFF.PNG";
+		st = "false";
 	}
 	else{
-		document.getElementById("status").innerHTML = "הסטטוס שלך: לא פעיל";
-		img.src="/static/img/ON.jpg";
-	}
-}
-
-function loadName(){
-	var name = document.getElementById("firstName").value;
-	
-	if(name!="None")
-	{
-	name = "{{name}}";
-	}
-	else
-	{
-	name = "";
+		img.src="/static/img/ON.PNG";
+		st = "true";
 	}
 	
-	var phone = document.getElementById("phone").value;
-	if(phone!="0")
-	{
-	phone = "{{phone}}";
-	}
-	else
-	{
-	phone = "";
-	}
+	 $.ajax({
+		url:'/setStatus',
+		type:'GET',
+		dataType:'json',
+        data:{stat:st},
+		success:function(data, status, xhr) {
+			//alert('סטטוס השתנה');
+		},
+		error:function(xhr, status, error) {
+            alert(xhr.responseText);
+		}
+	});
 }
 
 function updateUser(){
 	var name = $('#firstName').val();
-	var phone = $('#phone').val();
 	var car = document.getElementById('carReq').checked;
 	
 	 $.ajax({
 		url:'/update_user',
 		type:'GET',
 		dataType:'json',
-        data:{name:name, phone:phone, car:car},
+        data:{name:name, car:car},
 		success:function(data, status, xhr) {
 			if (data.status == 'ok')
-				{
-					alert("פרטיך עודכנו");
-					return;
-				}
+			{
+				alert("פרטיך עודכנו");
+				location.reload();
+				return;
+			}
 		},
 		error:function(xhr, status, error) {
             alert(xhr.responseText);

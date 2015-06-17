@@ -10,7 +10,6 @@ class VolunteerHandler(webapp2.RequestHandler):
 		if user:
 			template_params['email'] = user.email
 			template_params['name'] = user.name
-			template_params['phone'] = user.phone
 			template_params['status'] = user.status
 			template_params['hasCar'] = user.hasCar
 			template_params['logoutUrl'] = user.logoutUrl()
