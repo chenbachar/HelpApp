@@ -9,7 +9,7 @@
 	<center>
 	<p id="welcome">
 		<a href='{{logoutUrl}}'>התנתק</a>
-		{% if name == 'None' %}
+		{% if name == 'None'  || name == ''%}
 			 {{email}} ברוך הבא
 		{% else  %}
 			 {{name}} ברוך הבא
