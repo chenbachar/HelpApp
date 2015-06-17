@@ -49,3 +49,22 @@ class User(ndb.Model):
 
 		else:
 			return None
+	
+	
+	@classmethod
+	def updateInfo(self,uEmail,updName,updPhone,updCar):
+		googleUser = users.get_current_user()
+		googleEmail = googleUser.email()
+		if googleEmail != uEmail:
+			return False
+		user = User.query(User.email == uEmail).get()
+		if user:
+			user.name = updName
+			user.hasCar = updCar
+			user.phone = updPhone
+			user.put()
+			return True
+		else:
+			return False
+		
+		

@@ -29,6 +29,9 @@ handlers:
 
 - url: /add_request
   script: api.add_request.app
+
+- url: /update_user
+  script: api.update_user.app
   
 - url: /api/(.*)
   script: api.\1.app

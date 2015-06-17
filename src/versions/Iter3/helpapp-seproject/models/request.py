@@ -18,10 +18,9 @@ class Request(ndb.Model):
 		req.description = desc
 		req.isCarNeeded = carNeeded
 		req.date = datetime.utcnow()
+		req.put()
 		#converting UTC to GMT+2[Israel timezone] 
 		#utc = datetime.utcnow()
 		#UTC_OFFSET = 3 
 		#req.date = utc# - timedelta(hours=UTC_OFFSET) #(UTC+3 = GMT+2)
 		
-		
-		req.put()

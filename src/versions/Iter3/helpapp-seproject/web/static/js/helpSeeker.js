@@ -20,6 +20,12 @@ function submitRequest() {
 		return;
 	}
 	
+	if(phone.length < 9)
+	{
+		alert("אנא הכנס מספר טלפון עם 9-10 ספרות");
+		return;
+	}
+	
     $.ajax({
 		url:'/add_request',
 		type:'GET',
@@ -29,8 +35,8 @@ function submitRequest() {
 			if (data.status == 'ok')
 				{
 					alert("בקשתך נוספה\nמתנדב מתאים יצור איתך קשר");
-					$( "#description" ).val("");
-					$( "#city" ).val("בחר עיר");
+					$( "#description" ).val(""); //resetting input values
+					$( "#city" ).val("0");
 					$( "#phone" ).val("");
 					return;
 				}

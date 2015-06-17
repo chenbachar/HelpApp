@@ -96,26 +96,22 @@
 	<form>
 		<fieldset style="width:30%">
 			<legend>עדכון פרטים</legend>
-			<input id="firstName" type="text" style="width:25%" value="{{name}}">
+			<input id="firstName" type="text" style="width:25%">
 			שם
 			<br><br>
-			<script>
-				
-			</script>
-			<input id="email" type="text" style="width:30%" value="{{email}}">
-			טלפון
+			{{email}} :אימייל
 			<br><br>
-			<input id="phone" type="text" style="width:20%" value="{{phone}}">
-			אימייל
+			<input id="phone" type="text" style="width:20%">
+			טלפון
 			<br><br>
 				<b><u>:רכב</u></b>
 				<br>
-				<input type="radio" name="car" value="yes">אין
-				<input type="radio" name="Car" value="no" checked>יש
+				<input type="radio" name="car" id="carReq">אין
+				<input type="radio" name="car" id="carNotReq" checked>יש
 			
 			<br>
 			<br>
-			<input type="button" value="עדכן" onclick=""/>
+			<input id="updateButton" type="button" value="עדכן"/>
 		</fieldset>
 	</form>
 	</center>	
