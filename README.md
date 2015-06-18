@@ -6,7 +6,7 @@ https://github.com/chenbachar/HelpApp
 You can get our code in "src" folder that can be found in our github reprository. To get the copy of our files you need to clone our reprository with your git software or by using "fork".
 
 ###How to compile our program?
-To compile our program you would've to use "Visual-Studio" or any other c# environment.
+To compile our program you would've to use "pycharm", "google app engine" or any other python environment.
 
 ###How to create a new version?
 Once the new version is ready you can push it to "src\versions" in our github repository.After finishing the development process make sure there are no bugs that you are aware of. In addition, we expect from the developer to number the versions.
