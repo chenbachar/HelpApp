@@ -10,7 +10,11 @@ class getNotificationHandler(webapp2.RequestHandler):
 			
 		if user:
 			lastSeen = User.getLastSeen(user.email)
-			#recent = Request.getMostRecent(lastSeen)
+			lastSeenDay = lastSeen.date().day
+			lastSeenMonth = lastSeen.date().month
+			
+			#recent = Request.getMostRecent()
+			
 			notification = "False"
 			#if lastSeen < recent:
 			#	notification = "True"
