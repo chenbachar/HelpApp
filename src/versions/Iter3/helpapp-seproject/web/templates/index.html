@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% block head %}
 	{{block.super}}
-	<link rel="stylesheet" type="text/css" href="/static/css/indexStyles.css"/>
+	<link rel="stylesheet" type="text/css" href="" id="css"/>
+	<script>
+	if(screen.availWidth > 800)
+	{
+		document.getElementById("css").href="/static/css/indexStyles.css";
+	}
+	else
+	{
+		document.getElementById("css").href="/static/css/indexStylesMobile.css";
+	}
+	</script>
 	<script> 
 		$(document).ready(function(){
 			$("#freeText").click(function(){
