@@ -7,15 +7,13 @@
 
 {% block content %}
 	<center>
-	<p id="welcome">
-		<a href='{{logoutUrl}}'>התנתק</a>
+	<p id="welcome" dir="rtl"> ברוך הבא
 		{% if name == 'None' or name == '' %}
-			 {{email}} ברוך הבא
+			 {{email}} 
 		{% else  %}
-			 {{name}} ברוך הבא
-				 
+			 {{name}}
 		{% endif %}
-		
+		<a href='{{logoutUrl}}'>התנתק</a>
 	</p>
 	{% if status %}
 		<img id="imgStatus" onclick="changeImg()" src="/static/img/ON.PNG">
@@ -24,7 +22,8 @@
 	{% endif %}
 
 	<br><br>
-	<div id="textVol">
+	<div id="textVol" dir="rtl">
+		בחר עיר שברצונך להתנדב:
 		<select id="city" dir="rtl">
 			<option value="0">כל האזורים</option>
 			<option value="1" style="font-weight: bold; color: red">צפון</option>
@@ -90,7 +89,6 @@
 			<option value="61" style="font-weight: bold; color: black">הנגב המערבי</option>
 			<option value="62" style="font-weight: bold; color: black">דרום ים המלח</option>
 		</select>
-	:בחר עיר שברצונך להתנדב<p></p>
 	</div>
 	<br>
 	</br>
