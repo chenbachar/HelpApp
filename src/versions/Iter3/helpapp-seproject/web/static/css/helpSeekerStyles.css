@@ -3,6 +3,13 @@
 	font-family:Arial;
 }
 
+#description{
+	resize:none;
+	font-family:Arial;
+	font-size:18px;
+	width:60%;
+}
+
 #cityDiv {
 	text-align:right;
 	font-family:Arial;
