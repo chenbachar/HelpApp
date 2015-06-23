@@ -35,6 +35,9 @@ handlers:
   
 - url: /setStatus
   script: api.setStatus.app
+  
+- url: /setCity
+  script: api.setCity.app
 
 - url: /get_notification
   script: api.get_notification.app
