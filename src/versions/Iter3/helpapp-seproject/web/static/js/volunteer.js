@@ -1,9 +1,7 @@
 $(function(){ //this is jQuery's short notation for "fire all this when page is ready"
   $('#updateButton').on('click', updateUser);
   //showRequest();
-  addToTable("asd","asd","asd","Asd");
-  addToTable("asd","asd","asd","Asd");
-  addToTable("asd","asd","asd","Asd");
+  
   
 });
 
@@ -56,8 +54,20 @@ function updateUser(){
 	});	
 }
 
-function updateCity(){
+function setCity(){
 	var city = $('#city').val();
+	
+	$.ajax({
+		url:'/setCity',
+		type:'GET',
+		dataType:'json',
+		data:{city:city},
+		success:function(data, status, xhr) {
+		},
+		error:function(xhr, status, error) {
+            alert(xhr.responseText);
+		}
+	});	
 }
 
 function addToTable(info,phone,city,car){
