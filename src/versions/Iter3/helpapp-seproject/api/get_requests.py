@@ -8,16 +8,12 @@ class getRequestHandler(webapp2.RequestHandler):
 		user = User.checkUser()
 		if not user:
 			return
-		
+
 		status = 'ok'
-		city = int(user.city)
-		car = False
-		if user.hasCar:
-			car = True
-		req = Request.getRequest(city,car)
+		req = Request.getRequest(user.city)
 		if not req:
 			status = 'error'
-				
+
 		self.response.write(json.dumps({'status':status, 'request':req }))
 app = webapp2.WSGIApplication([
 	('/get_requests', getRequestHandler)

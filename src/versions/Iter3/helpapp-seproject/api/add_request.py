@@ -7,6 +7,7 @@ class addRequestHandler(webapp2.RequestHandler):
 		new_req = None
 		new_req_description = self.request.get('description')
 		new_req_city = self.request.get('city')
+		new_req_city = int(new_req_city)
 		new_req_phone = self.request.get('phone')
 		new_req_car = self.request.get('car')
 		needCar = False

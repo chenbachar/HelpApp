@@ -1,8 +1,9 @@
 $(function(){ //this is jQuery's short notation for "fire all this when page is ready"
   $('#updateButton').on('click', updateUser);
-  //showRequest();
-  
-  
+  showRequest();
+  $(document).on("cut copy paste","#phone",function(e) {
+        e.preventDefault();
+    });
 });
 
 function changeImg(){
@@ -63,6 +64,7 @@ function setCity(){
 		dataType:'json',
 		data:{city:city},
 		success:function(data, status, xhr) {
+			location.reload();
 		},
 		error:function(xhr, status, error) {
             alert(xhr.responseText);
@@ -93,7 +95,6 @@ function showRequest(){
 		success:function(data, status, xhr) {
 			if (data.status == 'ok')
 			{
-			alert("ASD");
 				var i = 0;
 				while(i < data.request.length)
 				{
