@@ -25,7 +25,7 @@
 	<br><br>
 	<div id="textVol" dir="rtl">
 		בחר עיר שברצונך להתנדב:
-		<select id="city" dir="rtl">
+		<select id="city" dir="rtl" onchange="setCity()">
 			<option value="0">כל האזורים</option>
 			<option value="1" style="font-weight: bold; color: red">צפון</option>
 			<option value="2" style="font-weight: bold; color: black">חיפה והסביבה</option>
@@ -98,9 +98,9 @@
 		<fieldset style="width:30%">
 			<legend>עדכון פרטים</legend>
 			{% if name == 'None' or name == '' %}
-			 <input id="firstName" type="text" style="width:25%" value="">
+			 <input id="firstName" type="text" style="width:25%" value="" dir="rtl">
 			{% else  %}
-			  <input id="firstName" type="text" style="width:25%" value="{{name}}">
+			  <input id="firstName" type="text" style="width:25%" value="{{name}}" dir="rtl">
 			{% endif %}
 			
 			שם
