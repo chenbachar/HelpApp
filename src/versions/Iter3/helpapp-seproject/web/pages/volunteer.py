@@ -13,6 +13,7 @@ class VolunteerHandler(webapp2.RequestHandler):
 			template_params['status'] = user.status
 			template_params['hasCar'] = user.hasCar
 			template_params['logoutUrl'] = user.logoutUrl()
+			template_params['city'] = user.city
 			
 		else:
 			self.redirect('/')
