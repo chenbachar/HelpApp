@@ -11,6 +11,7 @@ class User(ndb.Model):
 	status = ndb.BooleanProperty()
 	hasCar = ndb.BooleanProperty()
 	lastSeen = ndb.DateTimeProperty()
+	city = ndb.IntegerProperty()
 	
 	@staticmethod
 	def checkUser():
@@ -44,9 +45,10 @@ class User(ndb.Model):
 			if not user:	#add user to DB
 				user = User()
 				user.email = googleUser.email()
-				user.status = False
+				user.status = True
 				user.hasCar = False
 				user.name = "None"
+				user.city = 0
 				user.put()
 			return user 	#user exists
 
@@ -82,7 +84,20 @@ class User(ndb.Model):
 			return True
 		else:
 			return False
-
+	
+	@classmethod
+	def setCity(self,uEmail,cit):
+		googleUser = users.get_current_user()
+		googleEmail = googleUser.email()
+		if googleEmail != uEmail:
+			return False
+		user = User.query(User.email == uEmail).get()
+		if user:
+			user.city = cit
+			user.put()
+			return True
+		else:
+			return False
 			
 	@classmethod
 	def getLastSeen(self,uEmail):

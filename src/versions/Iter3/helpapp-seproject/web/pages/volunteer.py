@@ -17,8 +17,7 @@ class VolunteerHandler(webapp2.RequestHandler):
 		else:
 			self.redirect('/')
 			return
-		
-		
+			
 		html = template.render("web/templates/volunteer.html", template_params)
 		self.response.write(html)
 

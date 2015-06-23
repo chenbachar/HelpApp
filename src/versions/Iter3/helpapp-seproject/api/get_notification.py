@@ -15,7 +15,7 @@ class getNotificationHandler(webapp2.RequestHandler):
 			
 			#recent = Request.getMostRecent()
 			
-			notification = "False"
+			notification = "True"
 			#if lastSeen < recent:
 			#	notification = "True"
 			self.response.write(json.dumps({'status':notification}))

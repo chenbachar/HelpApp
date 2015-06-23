@@ -4,14 +4,14 @@ from datetime import datetime
 from datetime import timedelta
 
 class Request(ndb.Model):
-	city = ndb.StringProperty()
+	city = ndb.IntegerProperty()
 	phone = ndb.StringProperty()
 	date = ndb.DateTimeProperty()
 	description = ndb.StringProperty()
 	isCarNeeded = ndb.BooleanProperty()
 	
-	@classmethod
-	def add(self,cit,phoneNum,desc,carNeeded):
+	@staticmethod
+	def add(cit,phoneNum,desc,carNeeded):
 		req = Request()
 		req.city = cit
 		req.phone = phoneNum
@@ -19,11 +19,24 @@ class Request(ndb.Model):
 		req.isCarNeeded = carNeeded
 		req.date = datetime.utcnow()
 		req.put()
-		#converting UTC to GMT+2[Israel timezone] 
-		#utc = datetime.utcnow()
-		#UTC_OFFSET = 3 
-		#req.date = utc# - timedelta(hours=UTC_OFFSET) #(UTC+3 = GMT+2)
-	
+		
+	@staticmethod
+	def getRequest(cit,car):
+		qry = None
+		#if cit == 1:
+		#	qry = Request.query( Request.city >= 1, Request.city <= 11 ).fetch()
+		#else:
+		qry = Request.query( Request.city == cit ).fetch()
+		req = []
+		for request in qry:
+			req.append({
+				"phone": request.phone,
+				"description": request.description,
+				"city": request.city,
+				"isCarNeeded": request.isCarNeeded
+			})
+		return req
+		
 	#@classmethod
 	#def getMostRecent(self):
 	#	day = Request.date.day()
