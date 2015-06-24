@@ -48,7 +48,7 @@ class User(ndb.Model):
 				user.status = True
 				user.hasCar = False
 				user.name = "None"
-				user.city = 0
+				user.city = 100
 				user.put()
 			return user 	#user exists
 

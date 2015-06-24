@@ -23,7 +23,7 @@ class Request(ndb.Model):
 	@staticmethod
 	def getRequest(cit):
 		qry = None
-		if cit == 0:
+		if cit == 100:
 			qry = Request.query( Request.city >= 0 ).fetch()
 		elif cit == 1:
 			qry = Request.query( Request.city >= 1, Request.city <= 11 ).fetch()

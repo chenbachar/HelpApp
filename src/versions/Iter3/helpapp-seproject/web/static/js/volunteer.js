@@ -1,11 +1,7 @@
-$(function(){ //this is jQuery's short notation for "fire all this when page is ready"
-  $('#updateButton').on('click', updateUser);
-  showRequest();
-  $(document).on("cut copy paste","#phone",function(e) {
-        e.preventDefault();
-    });
+$( document ).ready(function() {
+	$('#updateButton').on('click', updateUser);  
+	showRequest();
 });
-
 function changeImg(){
 	var img = document.getElementById("imgStatus");
 	var st = "true";
@@ -57,7 +53,6 @@ function updateUser(){
 
 function setCity(){
 	var city = $('#city').val();
-	
 	$.ajax({
 		url:'/setCity',
 		type:'GET',
@@ -67,9 +62,9 @@ function setCity(){
 			location.reload();
 		},
 		error:function(xhr, status, error) {
-            alert(xhr.responseText);
+			alert(xhr.responseText);
 		}
-	});	
+	});
 }
 
 function addToTable(info,phone,city,car){
@@ -91,7 +86,7 @@ function showRequest(){
 		url:'/get_requests',
 		type:'GET',
 		dataType:'json',
-        data:{city:city},
+		data:{city:city},
 		success:function(data, status, xhr) {
 			if (data.status == 'ok')
 			{
@@ -107,6 +102,7 @@ function showRequest(){
 					i = i+1;
 				}
 			}
+			document.getElementById(data.city).selected = true;
 		},
 		error:function(xhr, status, error) {
             alert(xhr.responseText);
