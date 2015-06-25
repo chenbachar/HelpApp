@@ -1,4 +1,4 @@
-window.onload = function(){
+$(document).ready(function(){
 	var photoHeader = document.getElementById("headerPic");
 	var photoFooter = document.getElementById("footerPic");
 	var imgHeader = new Image();
@@ -18,4 +18,4 @@ window.onload = function(){
 	}
 	photoHeader.src = imgHeader.src;
 	photoFooter.src = imgFooter.src;
-}
+});

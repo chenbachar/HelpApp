@@ -37,12 +37,18 @@ function updateUser(){
 		type:'GET',
 		dataType:'json',
         data:{name:name, car:car},
+		beforeSend: function() {
+				$.LoadingOverlay("show");
+			},
+		complete: function() {
+				$.LoadingOverlay("hide");
+			},
 		success:function(data, status, xhr) {
 			if (data.status == 'ok')
 			{
 				alert("פרטיך עודכנו");
+				
 				location.reload();
-				return;
 			}
 		},
 		error:function(xhr, status, error) {
@@ -206,7 +212,7 @@ function addCity(city) {
 	else if(city == "61")
 		return "הנגב המערבי";
 	else if(city == "62")
-		return "דרום ים המלח";	
+		return "דרום ים המלח";
 }
 
 function addCar(needCar) {
@@ -216,7 +222,6 @@ function addCar(needCar) {
 		return "X";
 }
 
-
 function showRequest(){
 	var city = $('#city').val();
 	 $.ajax({
@@ -224,6 +229,12 @@ function showRequest(){
 		type:'GET',
 		dataType:'json',
 		data:{city:city},
+		beforeSend: function() {
+				$.LoadingOverlay("show");
+			},
+		complete: function() {
+				$.LoadingOverlay("hide");
+			},
 		success:function(data, status, xhr) {
 			if (data.status == 'ok')
 			{
@@ -232,14 +243,23 @@ function showRequest(){
 				{
 					var phoneReq = data.request[i].phone;
 					var infoReq = data.request[i].description;
-					var cityReq = data.request[i].city; //addCity(data.request[i].city);
-					var carReq = data.request[i].isCarNeeded; //addCar(data.request[i].isCarNeeded);
+					var cityReq = addCity(data.request[i].city); // data.request[i].city; //
+					var carReq = addCar(data.request[i].isCarNeeded); // data.request[i].isCarNeeded; //
 					
 					addToTable(infoReq,phoneReq,cityReq,carReq);
 					i = i+1;
 				}
 			}
 			document.getElementById(data.city).selected = true;
+			
+			if(data.car == true)
+			{
+				document.getElementById("carReq").checked = true;
+			}
+			else
+			{
+				document.getElementById("carNotReq").checked = true;
+			}
 		},
 		error:function(xhr, status, error) {
             alert(xhr.responseText);

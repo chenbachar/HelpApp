@@ -14,7 +14,7 @@ class getRequestHandler(webapp2.RequestHandler):
 		if not req:
 			status = 'error'
 
-		self.response.write(json.dumps({'status':status, 'request':req, 'city':user.city }))
+		self.response.write(json.dumps({'status':status, 'request':req, 'city':user.city, 'car':user.hasCar }))
 app = webapp2.WSGIApplication([
 	('/get_requests', getRequestHandler)
 ], debug=True)

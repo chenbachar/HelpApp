@@ -53,12 +53,11 @@ class Request(ndb.Model):
 			})
 		return req
 	
-	
-	#qry = Request.query( Request.city == cit ).get() --> returns most recent value
-	#@classmethod
-	#def getMostRecent(self):
-	#	day = Request.date.day()
-	#	qry = Request.query(day < datetime.utcnow().day).get()
-	#	return qry
-	#	
-		
+	@staticmethod
+	def deleteRequest():
+		earliest = datetime.utcnow() - timedelta(days=1) #returns most recent value
+		qry = Request.query(Request.date < earliest).fetch(keys_only=True)
+		for request in qry:
+			request.delete()
+
+			

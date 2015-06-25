@@ -36,7 +36,7 @@ function submitRequest() {
 				{
 					alert("בקשתך נוספה\nמתנדב מתאים יצור איתך קשר");
 					$( "#description" ).val(""); //resetting input values
-					$( "#city" ).val("0");
+					$( "#city" ).val("100");
 					$( "#phone" ).val("");
 					return;
 				}
