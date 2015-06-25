@@ -4,24 +4,31 @@ from models.user import User
 from models.request import Request
 class getNotificationHandler(webapp2.RequestHandler):
 	def get(self):
-		user = User.checkUser()
-
-		notification = 'False'
-		if user:
-			notification = 'True'
-		#	#lastSeen = User.getLastSeen(user.email)
-		#	#lastSeenDay = lastSeen.date().day
-		#	#lastSeenMonth = lastSeen.date().month
-		#	
-		#	#recent = Request.getMostRecent()
-		#	
-		#	notification = 'True'
-		#	#if lastSeen < recent:
-		#	#	notification = "True"
-		#	self.response.write(json.dumps({'status':notification}))
+		user = User.checkConnected()
 		
-		self.response.write(json.dumps({'status':notification}))
-
+		if not user:
+			self.response.write('You are not connected')
+			return
+			
+		if user.status == False:
+			self.response.write(json.dumps({'status':'False'}))
+			return
+		
+		if user.status == True: 
+			recent = Request.checkRecent(user.lastSeen)
+			if recent == False: 
+				self.response.write(json.dumps({'status':'False'}))
+				return
+			if recent == True:
+				cit = Request.checkCity(user.city)
+				if cit == False:
+					self.response.write(json.dumps({'status':'False'}))
+					return
+				if cit == True:
+					self.response.write(json.dumps({'status':'True'}))
+					return
+		self.response.write(json.dumps({'status':'False'}))
+		
 app = webapp2.WSGIApplication([
 	('/get_notification', getNotificationHandler)
 ], debug=True)

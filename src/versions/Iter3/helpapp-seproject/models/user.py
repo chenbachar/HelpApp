@@ -110,3 +110,16 @@ class User(ndb.Model):
 			return user.lastSeen
 		else:
 			return False
+			
+	@staticmethod
+	def checkConnected():
+		googleUser = users.get_current_user()
+		if not googleUser:
+			return False
+		
+		user = User.query(User.email == googleUser.email()).get()
+		if user:
+			return user
+		
+		return False
+			
