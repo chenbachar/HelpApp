@@ -1,5 +1,0 @@
-C:\Users\מתן\Desktop\לימודים\סמסטר ו\הנדסת תוכנה\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\obj\Debug\helpApp.csprojResolveAssemblyReference.cache
-C:\Users\מתן\Desktop\לימודים\סמסטר ו\הנדסת תוכנה\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\obj\Debug\helpApp.dll
-C:\Users\מתן\Desktop\לימודים\סמסטר ו\הנדסת תוכנה\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\obj\Debug\helpApp.pdb
-C:\Users\מתן\Desktop\לימודים\סמסטר ו\הנדסת תוכנה\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\bin\helpApp.dll
-C:\Users\מתן\Desktop\לימודים\סמסטר ו\הנדסת תוכנה\HelpApp\src\versions\Iter1-MVP\helpApp\helpApp\bin\helpApp.pdb
