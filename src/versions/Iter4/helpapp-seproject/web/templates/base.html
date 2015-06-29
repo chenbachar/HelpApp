@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	{% block head %}
+	<title>HelpAPP</title>
+	<meta charset="windows-1252">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="/static/js/loadingoverlay.js"></script>
+	<link rel="stylesheet" type="text/css" href="" id="baseCss"/>
+	<script type="text/javascript">
+	$.LoadingOverlaySetup({
+		 color           : "rgba(0, 0, 0, 0)",
+		 image           : "/static/img/ajax-loader.gif",
+		 maxSize         : "80px",
+		 minSize         : "20px",
+		 resizeInterval  : 0,
+		 size            : "100%"
+	});
+	
+	if(screen.availWidth > 800)
+	{
+		document.getElementById("baseCss").href="/static/css/base.css"; 
+	}
+	else
+	{
+		document.getElementById("baseCss").href="/static/css/baseMobile.css";
+	}
+	
+	
+	</script>
+	<script src="/static/js/base.js"></script>
+	{% endblock %}
+</head>
+<body>
+	<div id="header">
+		<img id="headerPic" class="stretch" alt="header">
+	</div>
+	<div id="wrapper">
+		{% block content %}
+		{% endblock %}
+	</div>
+	<div id="footer">
+		<img id="footerPic" class="stretch" alt="footer">
+		<p id="text">Copyright © 2015 HelpAPP LTD. All rights reserved.</p>
+	</div>
+	
+</body>
+</html>

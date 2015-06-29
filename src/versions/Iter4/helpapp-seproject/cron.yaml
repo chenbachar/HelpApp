@@ -1,0 +1,4 @@
+cron:
+- description: daily delete requests
+  url: /tasks/deleteRequests
+  schedule: every 24 hours
