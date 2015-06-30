@@ -1,9 +1,11 @@
 package com.appspot.helpapp_seproject.helpapp;
 
 import android.app.IntentService;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -33,6 +35,8 @@ import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.protocol.HttpContext;
 
+
+
 public class popUpMessage extends IntentService
 {
     public popUpMessage()
@@ -45,10 +49,14 @@ public class popUpMessage extends IntentService
     {
         InputStream ins = null;
         HttpClient httpC;
-        HttpGet httpP;
+        HttpGet httpG;
         HttpResponse httpR;
         HttpEntity httpE;
         boolean ntfFlag = false;
+
+        String email = intent.getStringExtra("email");
+        System.out.println("popUpMessage: " + email + " 1234");
+
 
         while(!ntfFlag)
         {
@@ -60,41 +68,16 @@ public class popUpMessage extends IntentService
             }
             try//connect to the server
             {
+                //send cookies
                 httpC = new DefaultHttpClient();
-//                httpP = new HttpPost("http://ephemeraltech.com/demo/android_tutorial20.php");
-                httpP = new HttpGet("http://helpapp-seproject.appspot.com/get_notification");
-                httpR = httpC.execute(httpP);
+                System.out.println("before get: " + email + " 1234");
+                httpG = new HttpGet("http://helpapp-seproject.appspot.com/get_notification?user="+email);
+                httpR = httpC.execute(httpG);//maybe throw ClientProtocolException and IOException thrown.
                 httpE = httpR.getEntity();
                 ins = httpE.getContent();
+                System.out.println("response: " + httpR + "1234");
 
-
-
-                // Create a local instance of cookie store
-                CookieStore cookieStore = (CookieStore) new BasicCookieStore();
-
-                // Create local HTTP context
-                HttpContext localContext = new BasicHttpContext();
-                // Bind custom cookie store to the local context
-                localContext.setAttribute(ClientContext.COOKIE_STORE, cookieStore);
-
-                HttpGet httpget = new HttpGet("http://www.google.com/", localContext);
-
-
-
-                List<Cookie> cookies = ((AbstractHttpClient) httpC).cookieStore().getCookies();
-                //List<Cookie> cookies = httpC.getCookieStore().getCookies();
-                if (cookies.isEmpty()) {
-                    System.out.println("None");
-                } else {
-                    for (int i = 0; i < cookies.size(); i++) {
-                        System.out.println("- " + cookies.get(i).toString());
-                    }
-                }
-
-                HttpPost httpost = new HttpPost("https://portal.sun.com/amserver/UI/Login?" +
-                        "org=self_registered_users&" +
-                        "goto=/portal/dt&" +
-                        "gotoOnFail=/portal/dt?error=true");
+                //get information if there's a notification to send
             }
             catch (Exception e)
             {
@@ -104,11 +87,7 @@ public class popUpMessage extends IntentService
             try //convert httpR to string
             {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(ins, "iso-8859-1"));
-//                StringBuilder sb =new StringBuilder();
-//                String line = null;
-//                while((line = reader.readLine()) != null)
-//                    sb.append(line + "\n");
-//                String helpRequest = sb.toString();
+
                 String helpRequest = reader.readLine();
                 ins.close();
                 System.out.println("helpRequest:" + helpRequest+ "1234");
@@ -122,9 +101,7 @@ public class popUpMessage extends IntentService
             }
         }
 
-        String intentData = intent.getDataString();
-
-
+//        String intentData = intent.getDataString();
 
         if (intent != null)
         {
@@ -132,6 +109,9 @@ public class popUpMessage extends IntentService
                     .setSmallIcon(R.drawable.ic_launcher)
                     .setContentTitle("HelpApp")
                     .setContentText("You got a new notification");
+
+
+
 
             Intent resultIntent = new Intent(this, MainActivity.class);
             resultIntent.putExtra("afterNtf", "connect");
@@ -144,6 +124,8 @@ public class popUpMessage extends IntentService
             int mNotificationId = 001;
 // Gets an instance of the NotificationManager service
             NotificationManager mNotifyMgr = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+           
 // Builds the notification and issues it.
             mNotifyMgr.notify(mNotificationId, mBuilder.build());
 
